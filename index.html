@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teresa Mingo Psicología</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body class="body">
+
+    <div id="app">
+
+
+
+        <nav class="nav">
+            <img src="./images/logo_bold_blanco.png" alt="Logo Teresa Mingo Psicología" @click="changePageTo('home')"
+                class="nav-logo">
+            <button class="nav-button" @click="changePageTo('servicios')">Servicios</button>
+            <button class="nav-button" @click="changePageTo('sobre-mi')">Sobre mí</button>
+            <button class="nav-button" @click="changePageTo('blog')">Artículos</button>
+            <button class="nav-button" @click="changePageTo('contacta')">Contacta</button>
+        </nav>
+
+        <div class="cookie-container">
+            <p>
+                Utilizamos cookies propias y de terceros para obtener datos estadísticos de la navegación de nuestros
+                usuarios y mejorar nuestros servicios. Si acepta o continúa navegando, consideramos que acepta su uso.
+                Puede cambiar la configuración u obtener más información
+                <a href="./cookies.html"> <strong>aqui</strong> </a>
+            </p>
+
+            <button class="cookie-btn">
+                entendido
+            </button>
+
+        </div>
+
+
+
+
+
+
+
+        <!-- home -->
+
+        <div v-show="currentpage == 'home'">
+
+
+            <div class="home-container1">
+                <br>
+                <br>
+
+
+                <img class="home-logo" src="./images/logo_tmb_morado.png" alt="Teresa Mingo Psicología">
+
+                <br>
+                <p class="p-main">
+                    - Aquí comienza tu proceso de mejora -</p>
+            </div>
+
+
+
+            <div class="home-container2">
+                <!-- layer <div class="home-container2-layer">
+                   
+                </div> -->
+            </div>
+
+            <div class="pre-footer"></div>
+
+
+        </div>
+
+
+        <!-- servicios -->
+        <div v-show="currentpage == 'servicios'">
+
+            <div class="pre-nav"></div>
+
+            <div class="servicios-container2">
+
+                <div class="servicios-container">
+                    <img @click="cambiaServicio('adultos')" src="images/1.jpg" alt="psicologia para adultos"
+                        class="servicios-imagen">
+                    <a href="#push">
+                        <p class="servicios-p">Psicología para adultos</p>
+                    </a>
+                    <div @click="cambiaServicio('adultos')" class="servicios-overlay">
+                        <div class="servicios-text">Más información</div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="servicios-container">
+                    <img @click="cambiaServicio('neuro')" src="images/2.jpg" alt="neuro psicologia"
+                        class="servicios-imagen">
+                    <div @click="cambiaServicio('neuro')" class="servicios-overlay">
+                        <div class="servicios-text">Más información</div>
+                    </div>
+                    <p class="servicios-p">Neuropsicología clínica</p>
+                </div>
+                <br>
+
+
+                <div class="servicios-container">
+                    <img @click="cambiaServicio('online')" src="images/3.jpg" alt="psicologia online"
+                        class="servicios-imagen">
+                    <div @click="cambiaServicio('online')" class="servicios-overlay">
+                        <div class="servicios-text">Más información</div>
+                    </div>
+                    <p class="servicios-p">Psicología on-line</p>
+
+                </div>
+                <br>
+
+            </div>
+
+            <div class="push" id="push"></div>
+
+            <div>
+
+                <div ref="descripcion-adultos" v-show="currentservice==='adultos'"
+                    class="servicios-descripcion-adultos descripcion">
+                    <p style="line-height: 1.5;">
+                        <br>
+                    <h1 id="link_adults">PSICOLOGÍA ADULTOS</h1>
+                    <hr>
+                    <hr>
+
+
+                    En las sesiones de terapia individual y de pareja para adultos, trabajo desde un enfoque integrador,
+                    empleando técnicas derivadas de la terapia cognitivo-conductual y de otras corrientes de manera
+                    individualizada y específica para cada caso. No valen recetas globales pues cada caso es único.
+                    <br> <br>
+                    Estas técnicas, unidas al estrecho vínculo que establezco con mis pacientes, buscan dotar de
+                    estrategias y herramientas concretas para conseguir los objetivos que nos proponemos, así como
+                    para enfrentarse a diferentes situaciones que puedan estar resultando difíciles de gestionar en
+                    el momento presente y también de cara al futuro.
+                    <br><br>
+                    Los objetivos de la terapia psicológica dependen siempre de las circunstancias personales de
+                    cada uno, de los motivos que le llevan a acudir en un inicio y lo que vamos descubriendo a
+                    medida que avanzan las sesiones. La terapia individual es una magnífica manera de comprender y
+                    gestionar mejor los pensamientos y emociones.
+                    Como profesional, me caracterizo por ser muy activa en la terapia, de manera que me gusta mucho
+                    dotar de ejercicios y tareas a mis pacientes no solo para dentro de las sesiones si no también
+                    fuera, para así poder generalizar lo visto en sesión. Por ello es importante el compromiso con
+                    la terapia desde el primer momento.
+                    Aunque la psicoterapia, que es el método que empleamos los psicólogos para ayudar a las personas
+                    que se hallan en situaciones emocionales difíciles, puede realizarse de manera grupal también,
+                    en mi caso, ofrezco mis sesiones en formato individual.
+                    <br><br>
+
+                    <strong> ¿Cómo son las sesiones?</strong>
+                    <br><br>
+                    La terapia individual se divide en <strong> sesiones de 1 hora de duración</strong> , a veces
+                    algo menos o más en función de lo que tratemos, con periodicidad semanal o quincenal según las
+                    necesidades del paciente y de los objetivos de intervención que nos propongamos. Al inicio, las
+                    sesiones suelen ser más frecuentes y a medida que se van logrando objetivos y se aumenta el
+                    bienestar, se espacian más.
+                    La duración total de la terapia no se puede especificar de antemano ya que cada paciente y sus
+                    circunstancias son únicas. De este modo, habrá terapias que en pocas sesiones (8-10) puedan
+                    finalizarse, pero habrá otras que se extiendan más en el tiempo, llegando a un año o dos.
+                    <br> <br>
+                    <strong> Cómo puedo ayudarte:</strong>
+                    <div class="servicios-lista">
+                        <ul style="line-height: 1.5;">
+                            • Asesoramiento psicológico puntual <br>
+                            • Ayuda psicológica en situaciones conflictivas<br>
+                            • Ansiedad Social<br>
+                            • Autoestima baja<br>
+                            • Ataques de pánico<br>
+                            • Crecimiento y desarrollo personal<br>
+                            • Depresión<br>
+                            • Dependencia emocional<br>
+                            • Desmotivación<br>
+                            • Dolor crónico<br>
+                            • Estrés<br>
+                            • Fobias<br>
+                            • Gestión de las emociones<br>
+                            • Habilidades sociales y de comunicación<br>
+                            • Mobbing<br>
+                            • Procesos de duelo<br>
+                            • Terapia de pareja<br>
+                            • Trastornos de ansiedad<br>
+                            • Trastornos de personalidad<br>
+                            • Trastornos de conducta<br>
+                            • Trastorno obsesivo-compulsivo<br>
+                            • Trastornos del sueño<br>
+                        </ul>
+                    </div>
+
+                    </p>
+                </div>
+
+                <div ref="descripcion-neuro" v-show="currentservice==='neuro'"
+                    class="servicios-descripcion-neuro descripcion">
+                    <p style="line-height: 1.5;">
+                        <br>
+                    <h1 id="link_neuro">NEUROPSICOLOGÍA CLÍNICA</h1>
+
+                    <hr>
+                    <hr>
+
+                    La neuropsicología es la rama de la psicología que estudia la relación entre cerebro y conducta.
+                    Es
+                    una disciplina a caballo entre la psicología y la neurología. Este tipo de intervenciones están
+                    destinadas a la evaluación, diagnóstico y/o intervención con pacientes con dificultades
+                    cognitivas,
+                    ya sean adquiridas (por ejemplo, a raíz de un tumor, un accidente cerebrovascular, o una
+                    enfermedad
+                    neurodegenerativa como el Alzheimer o la Esclerosis múltiple) o del neurodesarrollo (como pueden
+                    ser
+                    las propias del TDAH, TEA, PCI).
+                    <br>
+                    <br>
+                    Hoy en día y gracias a la investigación científica, cada vez más se conocen las conexiones entre
+                    las
+                    alteraciones de funciones cognitivas (como memoria, atención, lenguaje, funciones ejecutivas) y
+                    diferentes trastornos neurológicos o psiquiátricos, por lo que la valoración de estas funciones
+                    ayuda a orientar un posible diagnóstico médico y por tanto, el tratamiento más adecuado. De
+                    igual
+                    forma, una evaluación neuropsicológica exhaustiva puede determinar qué dificultades exactas
+                    existen
+                    y cómo de graves son.
+                    <br><br>
+                    En las intervenciones neuropsicológicas siempre recomiendo realizar primero una evaluación
+                    inicial
+                    para determinar con exactitud qué dificultades existen y qué puntos fuertes presenta el paciente
+                    para potenciarlos, centrando el tratamiento no solo en los déficits si no también en las
+                    fortalezas
+                    y capacidades preservadas. Aunque ya se acuda con un diagnóstico previo, es importante conocer
+                    desde
+                    qué punto se parte en el momento en el que se inicia la intervención.
+                    <br><br>
+                    Es importante destacar también las sesiones de reeducación que realizo con los más pequeños. En
+                    ellas trabajo, siempre en colaboración con las familias y colegios, para dotar de pautas y
+                    herramientas específicas para mejorar el proceso de aprendizaje en menores con trastornos del
+                    aprendizaje como dislexia, discalculia, TEL y también en TDAH. Las sesiones de reeducación
+                    tienen
+                    una duración de 45 minutos semanales y se realizan a lo largo del curso escolar.
+                    <br><br>
+                    <strong> Cómo puedo ayudarte:</strong>
+                    <br>
+                    <br>
+                    Evaluación, diagnóstico e intervención cognitivas en:
+                    </p>
+
+                    <div style="display:flex; flex-direction:column;">
+                        <div style="line-height: 2;">
+                            <strong> 1. Adultos:</strong><br>
+                            - Enfermedad de Alzheimer<br>
+                            - Enfermedad de Parkinson<br>
+                            - Otras demencias<br>
+                            - Esclerosis Múltiple<br>
+                            - Traumatismos Craneoencefálicos<br>
+                            - Ictus<br><br>
+                        </div>
+                        <div style="line-height: 2;">
+                            <strong> 2. Infanto-juvenil:</strong><br>
+                            - Trastornos del neurodesarrollo<br>
+                            - Retraso madurativo<br>
+                            - Trastornos del aprendizaje (Dislexia, Discalculia, TEL)<br>
+                            - TDAH<br>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div ref="descripcion-online" v-show="currentservice==='online'"
+                    class="servicios-descripcion-online descripcion">
+
+                    <p style="line-height: 1.5">
+                        <br>
+                    <h1 id="link_online">PSICOLOGÍA ONLINE</h1>
+
+                    <hr>
+                    <hr>
+
+                    La terapia Online es una excelente manera de poder realizar las intervenciones sin importar la
+                    ubicación del paciente o en aquellos casos donde el desplazamiento no sea posible por cualquier
+                    motivo. Mediante esta modalidad, la terapia se realiza de la misma manera que la terapia
+                    presencial, a través de sesiones individuales de 1 hora de duración pautadas en función del
+                    objetivo del paciente.
+                    <br><br>
+                    La psicología online no es nueva, lleva años desarrollándose y cuenta con numerosos
+                    profesionales que la llevan a cabo y está abalada por diferentes colegios profesionales.
+                    <br><br>
+                    Si bien es cierto que el funcionamiento es similar al de la terapia presencial, hay algunos
+                    trastornos en los que está contraindicada, como son:
+                    <strong>
+                        el abuso excesivo de sustancias; trastornos
+                        de la conducta alimentaria graves; ideación autolítica explícita grave; y/o trastornos mentales
+                        graves</strong>, en cuyo caso es siempre recomendable la terapia presencial para un mejor
+                    seguimiento con
+                    un contacto directo.
+                    <br><br>
+                    Si crees que esta modalidad se adapta a tus necesidades, ofrezco una primera sesión informativa
+                    online gratuita de media hora donde podrás conocer cómo trabajo y ver si te sientes cómodo con
+                    el formato para que puedas escogerlo o no con total confianza. <br><br>
+                    <strong>Te dejo a continuación algunas de sus ventajas:</strong> <br><br>
+
+                    <div style="display:flex; flex-direction:column; line-height: 2;">
+
+                        - Mayor comodidad, al realizarse desde casa o desde donde nosotros queramos.
+                        <br>
+                        - Mayor flexibilidad horaria, al no tener que desplazarnos podemos encajarla mucho mejor en
+                        nuestras rutinas diarias.
+                        <br>
+                        - No existen barreras geográficas, de manera que si no disponemos de posibilidad de
+                        desplazamiento, es lo indicado.
+                        <br>
+                        - Mayor ahorro, por lo general, las sesiones online suelen ser más económicas que las
+                        presenciales, ajustándose más a nuestro bolsillo.
+                        <br>
+                        - Seguridad y confianza, al desarrollar la terapia desde nuestro hogar nos sentimos más seguros
+                        en un entorno que conocemos.
+                        <br>
+                        - Validez ecológica, en este sentido, es interesante la intervención online porque al darse en
+                        espacios que nos son familiares, nos permite observar conductas que quizás en sesión no se
+                        muestran.
+                        <br>
+                        - Posibilidad de combinarla con terapia presencial, para dar un mayor soporte y seguimiento a la
+                        intervención.
+                    </div>
+
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+        <!-- 1 sobre mi -->
+        <div v-show="currentpage == 'sobre-mi'">
+            <div class="sobre-mi-main-container">
+                <div class="sobre-mi-container1">
+                    <img class="sobre-mi-imagen" src="./images/teresa.jpg" alt="Fotografía Teresa Mingo">
+
+                </div>
+
+                <div class="sobre-mi-indice">
+
+
+
+                    <a href="#bienvenido" class="sobre-mi-button">Sobre mí</a>
+
+                    <a href="#formacion" class="sobre-mi-button">Formación</a>
+
+                    <a href="#experiencia" class="sobre-mi-button"> Experiencia </a>
+
+                   <a href="#testimonios" class="sobre-mi-button" >Testimonios</a>
+
+
+
+                </div>
+
+               
+                <div class="smooth">
+
+                    
+
+                    <section id="bienvenido">
+                        <h3>SOBRE MI</h3>
+
+                        <p class="sobre-mi-p">
+
+                            Me llamo Teresa Mingo Bermúdez y soy psicóloga. Me gradué en la Universidad Autónoma de
+                            Madrid,
+                            donde también realicé el Máster Oficial en Psicología General Sanitaria. Estoy colegiada por
+                            el
+                            Colegio Oficial de Psicólogos de Catalunya con el nº C-27027.
+                            <br><br>
+                            Me presento como una apasionada de la psicología, con gran vocación y predisposición hacia
+                            el
+                            trabajo con las personas. Tengo la firme creencia de que TODOS somos capaces de cambiar, de
+                            mejorar y/o superarnos en diferentes aspectos de nuestras vidas. Si nos lo proponemos, todos
+                            podemos alcanzar una mejor versión de nosotros mismos.
+                            <br><br>
+                            Mi forma de trabajo es siempre desde un enfoque integrador, combinando la Terapia
+                            Cognitivo-Conductual, con Terapias de Tercera Generación como la ACT o el Mindfulness,
+                            adaptándome a las necesidades individuales de cada uno de mis pacientes. Procuro trabajar
+                            siempre desde la naturalidad, la honestidad, la confianza mutua y la cercanía, buscando
+                            crear un
+                            espacio en las sesiones donde las personas se sientan cómodas al cien por cien.
+                            <br><br>
+                            En el trabajo con mis pacientes, trato de servir de guía para que juntos podamos lograr
+                            todos
+                            los objetivos que nos propongamos, buscando conjuntamente soluciones, y sin olvidar que la
+                            terapia es un proceso en el que la persona es el agente de su propio cambio. A través de las
+                            sesiones, realizamos un proceso de evaluación exhaustivo para poder determinar con exactitud
+                            qué
+                            dificultades existen y por qué se mantienen, para después determinar los objetivos y
+                            establecer
+                            el mejor enfoque para la intervención.
+                            <br><br>
+                            En la actualidad desarrollo mi labor profesional de manera presencial en Badalona y en Sant
+                            Cugat (Barcelona), pero también de manera online a través de diferentes plataformas, lo que
+                            me
+                            permite trabajar sin importar la ubicación y siempre atendiendo las necesidades de todos mis
+                            pacientes con gran dedicación y compromiso.
+                            <br><br>
+
+                            Para mí sería todo un honor poder acompañarte a lo largo de este proceso que te planteas
+                            comenzar. No dudes en ponerte en contacto conmigo para lo que necesites.
+                            <br><br>
+                            ¡Te espero!
+                            <br><br>
+
+                        </p>
+
+                        <hr>
+                    </section>
+
+
+
+                    <section  id="formacion">
+                        <h3>FORMACIÓN</h3>
+
+                        <p class="sobre-mi-p">
+
+                            <strong>Formación académica</strong>
+                            <br><br>
+                            Como psicóloga, la formación constante es un requisito indispensable para poder atender las
+                            necesidades de todos y cada uno de mis pacientes de una forma rigurosa y profesional.
+                            Nuestro
+                            comportamiento es muy complejo, por lo que me gusta estar al día sobre temas de actualidad
+                            en
+                            terapia, así como leer libros de autoconocimiento y gestión de emociones, y apuntarme a
+                            talleres
+                            y cursos de formación específicos siempre que puedo.
+                            <br><br>
+                            Así, además de estar graduada en Psicología (itinerario en clínica) por la Universidad
+                            Autónoma
+                            de Madrid, complementé mi formación con un Máster Oficial en Psicología General Sanitaria,
+                            también en la Universidad Autónoma de Madrid y un Máster en Neuropsicología Clínica por
+                            Aten-d
+                            Formación. En la actualidad, me encuentro cursando el primer nivel del Máster en Terapias
+                            Contextuales de la Universidad de Almería, que finaliza en 2021.
+                            <br><br>
+                            <strong> Formación específica:</strong>
+                            <br>
+                        <p class="sobre-mi-p" style="line-height: 2;">
+                            - Habilidades Psicológicas para el manejo de pacientes al final de su vida. Centro de
+                            Psicología
+                            Aplicada, Facultad Psicología, Universidad Autónoma de Madrid, 2013<br>
+                            - Inteligencia emocional en el ámbito laboral. Facultad de psicología, Universidad Autónoma
+                            de
+                            Madrid, 2014<br>
+                            - Manejo de ideación suicida en pacientes con patología dual. Centro de Psicología Aplicada,
+                            Facultad de Psicología, Universidad Autónoma de Madrid, 2014.<br>
+                            - La estimulación sensorial. Espacios Snoezelen. Entidad promotora: Centro de Referencia
+                            Estatal
+                            de Atención al Daño Cerebral (CEADAC) del IMSERSO. Foro Formación, 2017.<br>
+                            - Atención Centrada en la Persona con demencia, CRE Alzheimer-Salamanca IMSERSO, 2017.<br>
+                            - Cómo ejercer como psicólogo a domicilio. Curso modalidad online Apoyo Psicológico en Casa
+                            (APEC), Madrid, 2017.<br>
+                            - Reducción de Sujeciones Físicas en Centros Residenciales. Formación Online, Atención
+                            Integral
+                            a la Dependencia A.I.D, Madrid, 2019.<br>
+                            - Mindfulness. ACRA Formación, Barcelona, 2019.<br>
+                            - Trastornos del aprendizaje: detección e intervención prevención. Fudació Pere Tarrés,
+                            Barcelona, 2019.<br>
+                            - Las reeducaciones psicopedagógicas desde una perspectiva cognitivo-conductual, Fundación
+                            Adana, Barcelona, 2020.<br>
+
+
+                        </p>
+
+                        </p>
+
+                        <hr>
+                    </section>
+
+
+
+                    <section id="experiencia">
+                        <h3>EXPERIENCIA PROFESIONAL</h3>
+
+                        <p class="sobre-mi-p" style="line-height: 2;">
+
+                            <strong> Aquí puedes ver un resumen de mi experiencia laboral como psicóloga:</strong>
+                            <br><br>
+                            - Psicóloga Sanitaria Online en Therapychat, 2020 - actualidad.
+                            <br>
+                            - Neuropsicóloga clínica y Psicóloga Sanitaria en PSIQUECUGAT. Sant Cugat del Vallès, 2019 –
+                            actualidad
+                            <br>
+                            - Psicóloga Sanitaria y Neuropsicóloga clínica en Badalona Psicòlegs. Badalona, 2019 –
+                            actualidad
+                            <br>
+                            - Neuropsicóloga clínica en Residencia de Mayores Catite. Castelldefels, 2019.
+                            <br>
+                            - Psicóloga sanitaria y Neuropsicóloga clínica en Centro de Rehabilitación Médica Avanzada
+                            GF.
+                            Madrid, 2017-2019
+                            <br>
+                            - Neuropsicóloga clínica en Residencia de Mayores Amavir Alcorcón. Madrid, 2017.
+                            <br>
+                            - Neuropsicóloga clínica (prácticas máster) en POLIBEA. Madrid, 2017.
+                            <br>
+                            - Psicóloga en Residencia de Mayores Amma Pozuelo. Madrid, 2016.
+                            <br>
+                            - Psicóloga General Sanitaria en Hospital Cantoblanco (Prácticas del máster MPGS), Unidad de
+                            Memoria. Madrid, 2016
+                            <br>
+                            - Psicóloga General Sanitaria en Hospital Rodríguez Lafora (Prácticas del máster MPGS),
+                            Unidad
+                            de Cuidados Psiquiátricos Prolongados, Madrid, 2016.
+                            <br>
+                            - Psicóloga en grupo de investigación PSICOGERO, UAM. Madrid, 2014 - 2015
+                            <br>
+
+                        </p>
+
+                        <hr>
+
+                    </section>
+
+
+                    <section id="testimonios">
+                        <h3>TESTIMONIOS</h3>
+
+
+                        <div>
+                            <div class="sobre-mi-container-testimonio">
+                                <p class="sobre-mi-testimonio">
+
+                                    Es muy dulce, agradable y cercana, me resulta fácil hablar con ella y me da pautas
+                                    claras sobre las tareas a ir realizando y los objetivos a perseguir. Es profesional
+                                    y
+                                    noto que voy avanzando y sintiéndome mejor. Estoy muy contenta con ella. La
+                                    recomiendo
+                                    al 100%.
+                                    <br>
+
+                                    <strong> -Pilar</strong>
+
+                                </p>
+
+
+                                <p class="sobre-mi-testimonio">
+                                    Me hizo sentir cómoda desde el principio, por su tranquilidad y manera de explicar
+                                    las
+                                    cosas. Da herramientas para que tú misma puedas identificar como te sientes y es
+                                    fácil
+                                    comunicarte con ella.
+                                    <br>
+                                    <strong>
+                                        -María C.</strong>
+
+
+                                </p>
+
+
+                                <p class="sobre-mi-testimonio">
+                                    ¡Me encantan las sesiones con Teresa! Llevo trabajando con ella unos meses ya y la
+                                    verdad es que del principio ahora, vaya cambio he notado. Me ha ayudado un montón,
+                                    yo
+                                    voy por un problema de ansiedad y súper bien. La recomiendo 100%.
+                                    <br>
+                                    <strong>
+                                        -PR</strong>
+
+
+                                </p>
+
+
+                                <p class="sobre-mi-testimonio">
+                                    Teresa es muy profesional y a la vez muy cercana. Me ha gustado cómo ha enfocado mi
+                                    caso
+                                    y me siento muy optimista. El trato excelente respetuosa. Soy mayor y tengo una
+                                    enfermedad degenerativa, es una experta.
+                                    <br>
+                                    <strong>
+                                        -Francisco
+                                    </strong>
+
+
+                                </p>
+                            </div>
+                            <br>
+                            <div class="sobre-mi-container-testimonio">
+                                <p class="sobre-mi-testimonio">
+
+                                    Llevo acudiendo a varias sesiones con Teresa y la verdad es que me siento súper
+                                    cómoda y
+                                    escuchada. Es muy cercana y me está ayudando un montón a superar mis problemas con
+                                    perspectiva. La recomiendo totalmente.
+                                    <br>
+                                    <strong> -Tamara</strong>
+
+
+
+                                </p>
+
+
+                                <p class="sobre-mi-testimonio">
+                                    Una excelente profesional. Llevo 3 sesiones y ya me ha ayudado a abrir los ojos en
+                                    muchos aspectos de mi vida. La recomiendo 100%.
+                                    Es una persona atenta, simpática y muy dulce explicándote las cosas.
+
+                                    <br>
+                                    <strong> -Judith</strong>
+
+
+
+                                </p>
+
+
+                                <p class="sobre-mi-testimonio">
+                                    Muy cercana, escucha y te da la mejor visión. Me está ayudando muchísimo a ver
+                                    aspectos
+                                    del día a día que no sabía canalizar, estoy aprendido de mí misma lo que no sabía.
+                                    La
+                                    recomiendo 100%.
+                                    <br>
+                                    <strong>-Montse</strong>
+
+
+
+                                </p>
+
+
+                                <p class="sobre-mi-testimonio">
+                                    Todo perfecto estoy súper contenta con Teresa es una gran profesional y me está
+                                    ayudando
+                                    mucho. Muchas gracias guapa. Besos.
+                                    <br>
+                                    <strong>-Jenifer</strong>
+                                    <br><br>
+
+
+
+                                </p>
+
+                            </div>
+                            <div class="pre-footer"></div>
+
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+
+
+
+
+            </div>
+
+
+        </div>
+
+        <!-- 1 blog -->
+        <div v-show="currentpage == 'blog'">
+
+            <br><br><br>
+
+            <div class="blog-container2">
+
+                <div>
+
+
+                    <a href="./blog10.html">
+                        <img class="blog-image" src="./images/blog10.JPG" alt="Foto Blog Teresa Mingo">
+                    </a>
+
+
+                </div>
+
+                <br>
+                <div>
+
+                    <a href="./blog11.html">
+                        <img class="blog-image" src="./images/blog11.JPG" alt="Foto Blog Teresa Mingo">
+                    </a>
+
+
+                </div>
+                <br>
+                <div>
+
+                    <a href="./blog12.html">
+                        <img class="blog-image" src="./images/blog12.JPG" alt="Foto Blog Teresa Mingo">
+                    </a>
+
+
+                </div>
+                <br>
+
+            </div>
+            <br><br>
+
+            <div class="blog-container2">
+
+                <div>
+
+
+                    <a href="./blog7.html">
+                        <img class="blog-image" src="./images/blog7.JPG" alt="Foto Blog Teresa Mingo">
+                    </a>
+
+
+                </div>
+
+                <br>
+                <div>
+
+                    <a href="./blog8.html">
+                        <img class="blog-image" src="./images/blog8.JPG" alt="Foto Blog Teresa Mingo">
+                    </a>
+
+
+                </div>
+                <br>
+                <div>
+
+                    <a href="./blog9.html">
+                        <img class="blog-image" src="./images/blog9.JPG" alt="Foto Blog Teresa Mingo">
+                    </a>
+
+
+                </div>
+                <br>
+
+            </div>
+            <br><br>
+
+            <div class="blog-container2">
+
+                <div>
+
+                    <a href="./blog4.html">
+                        <img class="blog-image" src="./images/blog4.JPG" alt="Foto Blog Teresa Mingo">
+                    </a>
+
+                </div>
+                <br>
+                <div>
+                    <a href="./blog5.html">
+                        <img class="blog-image" src="./images/blog5.JPG" alt="Foto Blog Teresa Mingo">
+                    </a>
+
+                </div>
+                <br>
+                <div>
+                    <a href="./blog6.html">
+                        <img class="blog-image" src="./images/blog6.JPG" alt="Foto Blog Teresa Mingo">
+                    </a>
+
+                </div>
+                <br>
+
+            </div>
+            <br><br>         
+
+            <div class="blog-container2">
+
+                <div>
+
+
+                    <a href="./blog1.html">
+                        <img class="blog-image" src="./images/blog1.JPG" alt="Foto Blog Teresa Mingo">
+                    </a>
+
+
+                </div>
+
+                <br>
+                <div>
+
+                    <a href="./blog2.html">
+                        <img class="blog-image" src="./images/blog2.JPG" alt="Foto Blog Teresa Mingo">
+                    </a>
+
+
+                </div>
+                <br>
+                <div>
+
+                    <a href="./blog3.html">
+                        <img class="blog-image" src="./images/blog3.JPG" alt="Foto Blog Teresa Mingo">
+                    </a>
+
+
+                </div>
+                <br>
+
+            </div>
+            <br><br>
+
+            <br><br><br><br><br><br>
+
+        </div>
+
+        <!-- 1 contacta -->
+        <div v-show="currentpage == 'contacta'">
+
+            <div>
+                <img class="contacta-imagen" src="images/recurso2.jpg" alt="Foto oficina psicología">
+            </div>
+
+            <div class="contacta-container1">
+
+                
+                    <a href="https://www.doctoralia.es/teresa-mingo-bermudez/psicologo-psicologo-infantil/barcelona" 
+                        target="_blank" class="contacta-button " >Pide cita en Doctoralia</a>
+               
+
+                
+                    <a href="mailto:mbtpsicologia@gmail.com" class="contacta-button ">Contacta por E-Mail</a>
+                
+            </div>
+
+            <div class="contacta-container2">
+                <p class="contacta-h1">Online o presencial </p>
+                <p class="contacta-p"> <strong>Badalona Psicòlegs</strong>
+                    <br>
+                    Plaça Badalona 1, 1º1ª
+                    |<br>
+                    08912, Badalona, Barcelona
+                </p>
+                <p class="contacta-p"> <strong>PSIQUECUGAT </strong>
+                    <br>
+                    C/Plana de l’Hospital, 15
+                    | <br>
+                    08172, Sant Cugat del Vallès, Barcelona
+                </p>
+                <p class="contacta-p"> <strong>Psicología Online:</strong>
+
+                    <br>
+                    Skype |
+                    Videoconsulta Doctoralia |
+                    Whatsapp
+                </p>
+
+                <div class="pre-footer"></div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+    <footer class="footer">
+
+        <div class="footer-1">
+            <div style="font-weight: bold"> Colegiada oficial de psicología de Catalunya: 27027
+                <br>
+                Universidad Autónoma de Madrid
+            </div>
+
+        </div>
+
+
+        <div class="footer-3">
+
+            <div style="display: flex;">
+                <a target="_blank" href="https://es.linkedin.com/in/teresa-mingo-bermudez"><img class="rrss"
+                        src="./images/linkedin.png" alt="Teresa Mingo Psicología Linkedin"> </a>
+
+            </div>
+            <div style="display: flex;">
+                <a target="_blank" href="https://www.instagram.com/mbtpsicologia/"><img class="rrss"
+                        src="./images/instagram.png" alt="Teresa Mingo Psicología Instagram"></a>
+
+            </div>
+            <div style="display: flex;">
+                <a target="_blank" href="https://wa.me/0034623260808"><img class="rrss" src="./images/whatsapp.png"
+                        alt="Teresa Mingo Psicología Whatsapp"></a>
+
+            </div>
+
+
+            <a target="_blank"
+                href="https://www.doctoralia.es/teresa-mingo-bermudez/psicologo-psicologo-infantil/barcelona"><img
+                    class="rrss" src="./images/doctoralia.png" alt="Teresa Mingo Psicología Doctoralia"> </a>
+
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="./index.js"> </script>
+
+
+
+</body>
+
+
+</html>
